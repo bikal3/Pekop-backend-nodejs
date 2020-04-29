@@ -1,0 +1,36 @@
+{
+  "name": "pekop_api",
+  "version": "1.0.0",
+  "description": "A backend developed that helps you to track the hotel finance",
+  "main": "app.js",
+  "dependencies": {
+    "@hapi/joi": "^15.0.3",
+    "babel-node": "0.0.1-security",
+    "bcrypt": "^4.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "moment-range": "^4.0.2",
+    "mongoose": "^5.9.10",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.9.5"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node app.js"
+  },
+  "keywords": [
+    "Web-Api",
+    "rest",
+    "api",
+    "node.js",
+    "express.js",
+    "mongoose",
+    "mongodb]"
+  ],
+  "author": "Bikal Shrestha",
+  "license": "ISC"
+}
