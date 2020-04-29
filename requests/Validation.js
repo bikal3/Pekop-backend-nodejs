@@ -48,10 +48,10 @@ const SIGNIN = (signInData) => {
 };
 const INCOME = (incomeData) => {
   const incomeSchema = Joi.object().keys({
-    room: Joi.number().min(1).required().label("Room"),
-    restaurant: Joi.number().min(1).required().label("Restaurant"),
-    out: Joi.number().min(1).required().label("Out"),
-    total: Joi.number().min(1).required().label("Total"),
+    room: Joi.number().min(0).required().label("Room"),
+    restaurant: Joi.number().min(0).required().label("Restaurant"),
+    out: Joi.number().min(0).required().label("Out"),
+    total: Joi.number().min(0).required().label("Total"),
     dates: Joi.date().required().label("Date"),
     creator: Joi.string().required().label("Creator"),
   });
@@ -61,10 +61,10 @@ const INCOME = (incomeData) => {
 
 const EXPENSE = (expenseData) => {
   const expenseSchema = Joi.object().keys({
-    kitchen: Joi.number().min(1).required().label("Kitchen"),
-    hotel: Joi.number().min(1).required().label("Hotel"),
-    out: Joi.number().min(1).required().label("Out"),
-    total: Joi.number().min(1).required().label("Total"),
+    kitchen: Joi.number().min(0).required().label("Kitchen"),
+    hotel: Joi.number().min(0).required().label("Hotel"),
+    out: Joi.number().min(0).required().label("Out"),
+    total: Joi.number().min(0).required().label("Total"),
     dates: Joi.date().required().label("Date"),
     creator: Joi.string().required().label("Creator"),
   });

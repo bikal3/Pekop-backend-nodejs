@@ -39,9 +39,9 @@ class ExpenseController {
   }
 
   async getSingleValue(request, response) {
-    let { dates, creator } = request.body.date;
+    let { dates, creator } = request.body;
     let expense = await Expense.findOne({
-      date: dates,
+      dates: dates,
       creator: creator,
     }).populate("creator");
     if (!expense) {
@@ -98,11 +98,11 @@ class ExpenseController {
     } else {
       try {
         let expenseId = request.params.id;
-        let { room, restaurant, out, dates, total } = result.value;
+        let { hotel, kitchen, out, dates, total } = result.value;
 
         let expense = await Expense.findOneAndUpdate(
           { _id: expenseId },
-          { room, restaurant, out, dates, total },
+          { hotel, kitchen, out, dates, total },
           { new: true }
         ).populate("creator");
         if (!expense) {
