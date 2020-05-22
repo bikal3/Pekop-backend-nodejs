@@ -53,8 +53,11 @@ class IncomeController {
   }
 
   async getMontlyValue(request, response) {
-    let { startDate, endDate, creator } = request.body;
-    let grandTotal = 0;
+    let { startDate, endDate, creator } = request.params;
+    let total = 0;
+    let room = 0;
+    let restaurant = 0;
+    let out = 0;
 
     let income = await Income.find({
       dates: {
@@ -63,8 +66,12 @@ class IncomeController {
       },
       creator: creator,
     });
+
     income.forEach((inc) => {
-      grandTotal += inc.total;
+      total += inc.total;
+      room += inc.room;
+      restaurant += inc.restaurant;
+      out += inc.out;
     });
     if (!income) {
       response
@@ -74,13 +81,10 @@ class IncomeController {
       response.status(200).json({
         success: true,
         income: income,
-        grandTotal: grandTotal,
-        dates: income.map(function (value) {
-          return {
-            date: value.dates,
-            total: value.total,
-          };
-        }),
+        total: total,
+        out: out,
+        restaurant: restaurant,
+        room: room,
       });
     }
   }

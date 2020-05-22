@@ -25,7 +25,11 @@ APIROUTER.put(
 // Income Request
 APIROUTER.post("/income", checkAuth, IncomeController.newIncome);
 APIROUTER.get("/income/date", checkAuth, IncomeController.getSingleValue);
-APIROUTER.get("/income/month", checkAuth, IncomeController.getMontlyValue);
+APIROUTER.get(
+  "/income/month/:startDate/:endDate/:creator",
+  checkAuth,
+  IncomeController.getMontlyValue
+);
 APIROUTER.put("/income/:id", checkAuth, IncomeController.updateIncome);
 
 //Expense Request
