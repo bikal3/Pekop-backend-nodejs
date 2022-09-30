@@ -4,7 +4,7 @@
   "description": "A backend developed that helps you to track the hotel finance",
   "main": "app.js",
   "dependencies": {
-    "@hapi/joi": "^15.0.3",
+    "@hapi/joi": "^15.1.1",
     "babel-node": "0.0.1-security",
     "bcrypt": "^4.0.1",
     "express": "^4.17.1",
